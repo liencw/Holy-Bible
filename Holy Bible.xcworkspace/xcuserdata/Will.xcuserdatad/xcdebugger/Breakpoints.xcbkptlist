@@ -65,11 +65,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Holy Bible/ContentViewController.m"
-         timestampString = "350316613.124929"
+         timestampString = "351626319.243867"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "84"
-         endingLineNumber = "84"
+         startingLineNumber = "97"
+         endingLineNumber = "97"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -183,6 +183,20 @@
          startingLineNumber = "30"
          endingLineNumber = "30"
          landmarkName = "-init:andChapter:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Holy Bible/ContentViewController.m"
+         timestampString = "351626319.243867"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "204"
+         endingLineNumber = "204"
+         landmarkName = "-oneFingerTwoTaps"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

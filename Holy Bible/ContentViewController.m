@@ -72,17 +72,29 @@
     NSString *trimText;
     NSInteger versesNum = 1;
     while ([rs2 next]) {
-        trimText = [[rs2 stringForColumn:@"unformatted"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        trimText = [trimText stringByReplacingOccurrencesOfString:@"\n" withString:@"" options:0 range:NSMakeRange(0, 2)];
+        
+        trimText = [[rs2 stringForColumn:@"unformatted"] stringByReplacingOccurrencesOfString:@" +" withString:@""
+                                                            options:NSRegularExpressionSearch
+                                                              range:NSMakeRange(0, [rs2 stringForColumn:@"unformatted"].length)];
+        
+        if ([trimText rangeOfString:@"\n"].location == 0  && versesNum != 1) {
+            [content appendString:@"\n\n"];
+        }
+        
+        trimText = [trimText stringByReplacingOccurrencesOfString:@"\n+" withString:@"" 
+                                                            options:NSRegularExpressionSearch 
+                                                            range:NSMakeRange(0, trimText.length)];
+        
         if (hasVerse)
             [content appendString:[NSString stringWithFormat:@"%d ", versesNum]];
+        
         [content appendString:trimText];
         versesNum++;
     }
     
     [myTextView setText:content];
-    [content release];
     
+    [content release];
     [db close];
     
     
@@ -186,8 +198,16 @@
     NSString *trimText;
     NSInteger versesNum = 1;
     while ([rs2 next]) {
-        trimText = [[rs2 stringForColumn:@"unformatted"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        trimText = [trimText stringByReplacingOccurrencesOfString:@"\n" withString:@"" options:0 range:NSMakeRange(0, 2)];
+        trimText = [[rs2 stringForColumn:@"unformatted"] stringByReplacingOccurrencesOfString:@" +" withString:@""
+                                                                                      options:NSRegularExpressionSearch
+                                                                                        range:NSMakeRange(0, [rs2 stringForColumn:@"unformatted"].length)];
+        if ([trimText rangeOfString:@"\n"].location == 0 && versesNum != 1) {
+            [content appendString:@"\n\n"];
+        }
+        
+        trimText = [trimText stringByReplacingOccurrencesOfString:@"\n+" withString:@"" 
+                                                          options:NSRegularExpressionSearch 
+                                                            range:NSMakeRange(0, trimText.length)];
         if (hasVerse)
             [content appendString:[NSString stringWithFormat:@"%d ", versesNum]];
         [content appendString:trimText];
