@@ -10,8 +10,8 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>bible_iphone.png</string>
-		<string>Holy-Bible-114.png</string>
+		<string>biblex57.png</string>
+		<string>biblex114.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -19,8 +19,8 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>bible_iphone.png</string>
-				<string>Holy-Bible-114.png</string>
+				<string>biblex57.png</string>
+				<string>biblex114.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
@@ -35,11 +35,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
