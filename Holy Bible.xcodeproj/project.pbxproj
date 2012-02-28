@@ -33,7 +33,6 @@
 /* Begin PBXFileReference section */
 		BE206D0414D2F6B500832924 /* ChapterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterViewController.h; sourceTree = "<group>"; };
 		BE206D0514D2F6B500832924 /* ChapterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewController.m; sourceTree = "<group>"; };
-		BE206D0F14D2F8B200832924 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		BE206D1014D2F8B200832924 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		BE206D1114D2F8B200832924 /* Content.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Content.xib; path = "Holy Bible/Content.xib"; sourceTree = "<group>"; };
 		BE60744E14DC4C60001B5C76 /* Chapter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Chapter.xib; path = "Holy Bible/Chapter.xib"; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		BE84C9CA14DAEB88004FF840 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		BE84C9CF14DAECC2004FF840 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		BE84F58014E0DAE600EFF924 /* Holy-Bible-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Holy-Bible-114.png"; sourceTree = "<group>"; };
+		BE921B1714FC7AB800DBF193 /* en */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = en; path = en.lproj/ContentViewController.h; sourceTree = "<group>"; };
 		BE96C63B14E0F8A60067E89F /* cunp.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = cunp.sqlite3; path = "Holy Bible/cunp.sqlite3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +133,7 @@
 				BE804CA314D2790D00B85E9D /* MainViewController.m */,
 				BE206D0414D2F6B500832924 /* ChapterViewController.h */,
 				BE206D0514D2F6B500832924 /* ChapterViewController.m */,
-				BE206D0F14D2F8B200832924 /* ContentViewController.h */,
+				BE921B1814FC7AB800DBF193 /* ContentViewController.h */,
 				BE206D1014D2F8B200832924 /* ContentViewController.m */,
 			);
 			path = "Holy Bible";
@@ -192,6 +192,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = fishgold;
 			};
 			buildConfigurationList = BE804C7314D2754D00B85E9D /* Build configuration list for PBXProject "Holy Bible" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -254,6 +255,14 @@
 				BE804C8714D2754D00B85E9D /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BE921B1814FC7AB800DBF193 /* ContentViewController.h */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE921B1714FC7AB800DBF193 /* en */,
+			);
+			name = ContentViewController.h;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
