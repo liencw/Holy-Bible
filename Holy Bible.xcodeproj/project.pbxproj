@@ -12,17 +12,20 @@
 		BE206D0714D2F6B500832924 /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE206D0514D2F6B500832924 /* ChapterViewController.m */; };
 		BE206D1214D2F8B200832924 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE206D1014D2F8B200832924 /* ContentViewController.m */; };
 		BE206D1314D2F8B200832924 /* Content.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE206D1114D2F8B200832924 /* Content.xib */; };
+		BE476D6514FD30C9002DD29D /* Holy Bible-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEE2D04614FD2B2300EAB51C /* Holy Bible-Info.plist */; };
+		BE476D6814FD3294002DD29D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE476D6A14FD3294002DD29D /* Localizable.strings */; };
+		BE476D6E14FD34B9002DD29D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE476D6D14FD34B9002DD29D /* Localizable.strings */; };
 		BE60745014DC4C60001B5C76 /* Chapter.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE60744E14DC4C60001B5C76 /* Chapter.xib */; };
+		BE76D0D514FCE002004D6863 /* Big5ToGB.tbl in Resources */ = {isa = PBXBuildFile; fileRef = BE76D0D414FCE002004D6863 /* Big5ToGB.tbl */; };
+		BE76D0D814FCF80B004D6863 /* BIG5toGB.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE76D0D714FCF80B004D6863 /* BIG5toGB.mm */; };
 		BE804C7E14D2754D00B85E9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE804C7D14D2754D00B85E9D /* UIKit.framework */; };
 		BE804C8014D2754D00B85E9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE804C7F14D2754D00B85E9D /* Foundation.framework */; };
 		BE804C8214D2754D00B85E9D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE804C8114D2754D00B85E9D /* CoreGraphics.framework */; };
-		BE804C8814D2754D00B85E9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE804C8614D2754D00B85E9D /* InfoPlist.strings */; };
 		BE804C8A14D2754D00B85E9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE804C8914D2754D00B85E9D /* main.m */; };
 		BE804C8E14D2754D00B85E9D /* MainAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE804C8D14D2754D00B85E9D /* MainAppDelegate.m */; };
 		BE804C9914D2762200B85E9D /* Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE804C9814D2762200B85E9D /* Window.xib */; };
 		BE804C9B14D2786600B85E9D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BE804C9A14D2786600B85E9D /* Default.png */; };
 		BE804CA414D2790D00B85E9D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE804CA314D2790D00B85E9D /* MainViewController.m */; };
-		BE804CA614D27B5700B85E9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE804CA514D27B5700B85E9D /* Localizable.strings */; };
 		BE84C9CB14DAEB88004FF840 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = BE84C9C614DAEB88004FF840 /* FMDatabase.m */; };
 		BE84C9CC14DAEB88004FF840 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE84C9C814DAEB88004FF840 /* FMDatabaseAdditions.m */; };
 		BE84C9CD14DAEB88004FF840 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BE84C9CA14DAEB88004FF840 /* FMResultSet.m */; };
@@ -37,13 +40,20 @@
 		BE206D0514D2F6B500832924 /* ChapterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewController.m; sourceTree = "<group>"; };
 		BE206D1014D2F8B200832924 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		BE206D1114D2F8B200832924 /* Content.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Content.xib; path = "Holy Bible/Content.xib"; sourceTree = "<group>"; };
+		BE476D6914FD3294002DD29D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BE476D6B14FD3326002DD29D /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		BE476D6C14FD332F002DD29D /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		BE476D6D14FD34B9002DD29D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BE60744E14DC4C60001B5C76 /* Chapter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Chapter.xib; path = "Holy Bible/Chapter.xib"; sourceTree = "<group>"; };
+		BE76D0CE14FCC9B4004D6863 /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = usr/lib/libiconv.2.dylib; sourceTree = SDKROOT; };
+		BE76D0D414FCE002004D6863 /* Big5ToGB.tbl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Big5ToGB.tbl; path = "Holy Bible/Big5ToGB.tbl"; sourceTree = "<group>"; };
+		BE76D0D614FCF7EC004D6863 /* BIG5toGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIG5toGB.h; sourceTree = "<group>"; };
+		BE76D0D714FCF80B004D6863 /* BIG5toGB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BIG5toGB.mm; sourceTree = "<group>"; };
+		BE78820A14FD1EA0008E5B56 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		BE804C7914D2754D00B85E9D /* Holy Bible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Holy Bible.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE804C7D14D2754D00B85E9D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE804C7F14D2754D00B85E9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BE804C8114D2754D00B85E9D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BE804C8514D2754D00B85E9D /* Holy Bible-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Holy Bible-Info.plist"; sourceTree = "<group>"; };
-		BE804C8714D2754D00B85E9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE804C8914D2754D00B85E9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE804C8B14D2754D00B85E9D /* Holy Bible-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Holy Bible-Prefix.pch"; sourceTree = "<group>"; };
 		BE804C8C14D2754D00B85E9D /* MainAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainAppDelegate.h; sourceTree = "<group>"; };
@@ -52,7 +62,6 @@
 		BE804C9A14D2786600B85E9D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BE804CA214D2790D00B85E9D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		BE804CA314D2790D00B85E9D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		BE804CA514D27B5700B85E9D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BE84C9C514DAEB88004FF840 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		BE84C9C614DAEB88004FF840 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		BE84C9C714DAEB88004FF840 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -60,8 +69,8 @@
 		BE84C9C914DAEB88004FF840 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		BE84C9CA14DAEB88004FF840 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		BE84C9CF14DAECC2004FF840 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		BE921B1714FC7AB800DBF193 /* en */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = en; path = en.lproj/ContentViewController.h; sourceTree = "<group>"; };
 		BE96C63B14E0F8A60067E89F /* cunp.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = cunp.sqlite3; path = "Holy Bible/cunp.sqlite3"; sourceTree = "<group>"; };
+		BEE2D04614FD2B2300EAB51C /* Holy Bible-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Holy Bible-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +91,7 @@
 		BE74979714DC2AEC00A385C1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE76D0D414FCE002004D6863 /* Big5ToGB.tbl */,
 				BE96C63B14E0F8A60067E89F /* cunp.sqlite3 */,
 				BE60744E14DC4C60001B5C76 /* Chapter.xib */,
 				BE804C9814D2762200B85E9D /* Window.xib */,
@@ -124,6 +134,7 @@
 		BE804C8314D2754D00B85E9D /* Holy Bible */ = {
 			isa = PBXGroup;
 			children = (
+				BE476D6D14FD34B9002DD29D /* Localizable.strings */,
 				BE74979714DC2AEC00A385C1 /* Resources */,
 				BEA14E9314F54308009ED2AA /* iPad */,
 				BE804C8C14D2754D00B85E9D /* MainAppDelegate.h */,
@@ -133,7 +144,7 @@
 				BE804CA314D2790D00B85E9D /* MainViewController.m */,
 				BE206D0414D2F6B500832924 /* ChapterViewController.h */,
 				BE206D0514D2F6B500832924 /* ChapterViewController.m */,
-				BE921B1814FC7AB800DBF193 /* ContentViewController.h */,
+				BE78820A14FD1EA0008E5B56 /* ContentViewController.h */,
 				BE206D1014D2F8B200832924 /* ContentViewController.m */,
 			);
 			path = "Holy Bible";
@@ -142,6 +153,7 @@
 		BE804C8414D2754D00B85E9D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BE76D0CE14FCC9B4004D6863 /* libiconv.2.dylib */,
 				BE84C9CF14DAECC2004FF840 /* libsqlite3.dylib */,
 				BE84C9C514DAEB88004FF840 /* FMDatabase.h */,
 				BE84C9C614DAEB88004FF840 /* FMDatabase.m */,
@@ -149,11 +161,12 @@
 				BE84C9C814DAEB88004FF840 /* FMDatabaseAdditions.m */,
 				BE84C9C914DAEB88004FF840 /* FMResultSet.h */,
 				BE84C9CA14DAEB88004FF840 /* FMResultSet.m */,
-				BE804CA514D27B5700B85E9D /* Localizable.strings */,
-				BE804C8514D2754D00B85E9D /* Holy Bible-Info.plist */,
-				BE804C8614D2754D00B85E9D /* InfoPlist.strings */,
+				BEE2D04614FD2B2300EAB51C /* Holy Bible-Info.plist */,
 				BE804C8914D2754D00B85E9D /* main.m */,
 				BE804C8B14D2754D00B85E9D /* Holy Bible-Prefix.pch */,
+				BE76D0D614FCF7EC004D6863 /* BIG5toGB.h */,
+				BE76D0D714FCF80B004D6863 /* BIG5toGB.mm */,
+				BE476D6A14FD3294002DD29D /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -200,6 +213,10 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hant",
+				"zh-Hans",
+				"zh-Hant-TW",
+				"zh-Hans-CN",
 			);
 			mainGroup = BE804C6E14D2754D00B85E9D;
 			productRefGroup = BE804C7A14D2754D00B85E9D /* Products */;
@@ -216,15 +233,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE804C8814D2754D00B85E9D /* InfoPlist.strings in Resources */,
 				BE804C9914D2762200B85E9D /* Window.xib in Resources */,
 				BE804C9B14D2786600B85E9D /* Default.png in Resources */,
-				BE804CA614D27B5700B85E9D /* Localizable.strings in Resources */,
 				BE206D1314D2F8B200832924 /* Content.xib in Resources */,
 				BE60745014DC4C60001B5C76 /* Chapter.xib in Resources */,
 				BE96C63C14E0F8A60067E89F /* cunp.sqlite3 in Resources */,
 				BE0F0EF314FCC48700BA93AF /* biblex57.png in Resources */,
 				BE0F0EF614FCC51300BA93AF /* biblex114.png in Resources */,
+				BE76D0D514FCE002004D6863 /* Big5ToGB.tbl in Resources */,
+				BE476D6514FD30C9002DD29D /* Holy Bible-Info.plist in Resources */,
+				BE476D6814FD3294002DD29D /* Localizable.strings in Resources */,
+				BE476D6E14FD34B9002DD29D /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,26 +262,21 @@
 				BE84C9CB14DAEB88004FF840 /* FMDatabase.m in Sources */,
 				BE84C9CC14DAEB88004FF840 /* FMDatabaseAdditions.m in Sources */,
 				BE84C9CD14DAEB88004FF840 /* FMResultSet.m in Sources */,
+				BE76D0D814FCF80B004D6863 /* BIG5toGB.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BE804C8614D2754D00B85E9D /* InfoPlist.strings */ = {
+		BE476D6A14FD3294002DD29D /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BE804C8714D2754D00B85E9D /* en */,
+				BE476D6914FD3294002DD29D /* en */,
+				BE476D6B14FD3326002DD29D /* zh-Hans-CN */,
+				BE476D6C14FD332F002DD29D /* zh-Hant-TW */,
 			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		BE921B1814FC7AB800DBF193 /* ContentViewController.h */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE921B1714FC7AB800DBF193 /* en */,
-			);
-			name = ContentViewController.h;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

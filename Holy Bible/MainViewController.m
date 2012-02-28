@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "FMDatabase.h"
 #import "ChapterViewController.h"
+#import "BIG5toGB.h"
 
 @implementation MainViewController
 
@@ -35,7 +36,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
     }
     return self;
 }
@@ -63,8 +63,8 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
-    //self.title = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
-    self.title = @"聖經和合本";
+    self.title = NSLocalizedString(@"CFBundleDisplayName",nil);
+    //self.title = @"聖經和合本";
     self.menuList = [NSMutableArray array];
     self.oList = [NSMutableArray array];
     self.nList = [NSMutableArray array];
@@ -138,9 +138,9 @@
 {
     
     if(section == 0)
-        return @"舊約";
+        return NSLocalizedString(@"OLDTestment",nil);
     else
-        return @"新約";
+        return NSLocalizedString(@"NEWTestment",nil);
 }
 
 
@@ -171,10 +171,31 @@
 	// get the view controller's info dictionary based on the indexPath's row
     NSMutableArray *sublist = [menuList objectAtIndex:indexPath.section];
     NSDictionary *dataDictionary = [sublist objectAtIndex:indexPath.row];
-    cell.textLabel.text = [dataDictionary valueForKey:kTitleKey];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", 
-                                 [dataDictionary valueForKey:kSimpifiedKey], 
-                                 [dataDictionary valueForKey:kDetailKey]];
+    
+    if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"zh-Hans"]) {
+        UInt32 big5 = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        NSString *big5EncStr = [[dataDictionary valueForKey:kTitleKey] stringByReplacingPercentEscapesUsingEncoding:big5];
+        Big5ToGB *big5togb = [[Big5ToGB alloc] init];
+        NSString *gbEncStr = [big5togb big5ToGB:big5EncStr];       
+        cell.textLabel.text = gbEncStr;
+        
+        big5EncStr = [[NSString stringWithFormat:@"%@ %@", 
+                       [dataDictionary valueForKey:kSimpifiedKey], 
+                       [dataDictionary valueForKey:kDetailKey]] stringByReplacingPercentEscapesUsingEncoding:big5];
+        gbEncStr = [big5togb big5ToGB:big5EncStr];
+        
+        cell.detailTextLabel.text = gbEncStr;
+        
+        [big5togb release];
+    }
+    else {
+        cell.textLabel.text = [dataDictionary valueForKey:kTitleKey];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", 
+                                     [dataDictionary valueForKey:kSimpifiedKey], 
+                                     [dataDictionary valueForKey:kDetailKey]];
+    }
+    
+    
 	
 	return cell;
 }

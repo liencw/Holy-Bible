@@ -9,6 +9,7 @@
 #import "ContentViewController.h"
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
+#import "BIG5toGB.h"
 
 @implementation ContentViewController
 @synthesize myTextView;
@@ -49,12 +50,15 @@
 - (void)viewDidLoad
 {
     NSString *dbpath = [[NSBundle mainBundle] pathForResource:@"cunp.sqlite3" ofType:nil]; 
+    
+    NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];    
 
     // Do any additional setup after loading the view from its nib.
-    if ([booksName isEqualToString:@"詩篇"])
+    if ([booksName isEqualToString:@"詩篇"] || [booksName isEqualToString:@"诗篇"])
         self.title = [NSString stringWithFormat:@"第 %@ 篇", chapter];
     else
         self.title = [NSString stringWithFormat:@"第 %@ 章", chapter];
+
     
     FMDatabase* db = [FMDatabase databaseWithPath:dbpath];
     if (![db open]) {
@@ -84,6 +88,10 @@
         trimText = [trimText stringByReplacingOccurrencesOfString:@"\n+" withString:@"" 
                                                             options:NSRegularExpressionSearch 
                                                             range:NSMakeRange(0, trimText.length)];
+        if ([language isEqualToString:@"zh-Hans"])
+             trimText = [trimText stringByReplacingOccurrencesOfString:@"裏" withString:@"裡" 
+                                                          options:NSRegularExpressionSearch 
+                                                            range:NSMakeRange(0, trimText.length)];
         
         if (hasVerse)
             [content appendString:[NSString stringWithFormat:@"%d ", versesNum]];
@@ -91,8 +99,17 @@
         [content appendString:trimText];
         versesNum++;
     }
-    
-    [myTextView setText:content];
+   
+    if ([language isEqualToString:@"zh-Hans"]) {
+        UInt32 big5 = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        NSString *big5EncStr = [content stringByReplacingPercentEscapesUsingEncoding:big5];
+        Big5ToGB *big5togb = [[Big5ToGB alloc] init];
+        NSString *gbEncStr = [big5togb big5ToGB:big5EncStr];
+        [myTextView setText:gbEncStr];
+        [big5togb release];
+    } 
+    else
+        [myTextView setText:content];
     
     [content release];
     [db close];
@@ -173,6 +190,8 @@
     
     CGPoint p = [myTextView contentOffset];
     
+    NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0]; 
+    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if ( hasVerse )
         [prefs setValue:@"true" forKey:@"hasVerseNumber"];
@@ -208,20 +227,37 @@
         trimText = [trimText stringByReplacingOccurrencesOfString:@"\n+" withString:@"" 
                                                           options:NSRegularExpressionSearch 
                                                             range:NSMakeRange(0, trimText.length)];
+        if ([language isEqualToString:@"zh-Hans"])
+            trimText = [trimText stringByReplacingOccurrencesOfString:@"裏" withString:@"裡" 
+                                                              options:NSRegularExpressionSearch 
+                                                                range:NSMakeRange(0, trimText.length)];
+        
         if (hasVerse)
             [content appendString:[NSString stringWithFormat:@"%d ", versesNum]];
         [content appendString:trimText];
+        
         versesNum++;
     }
     
     [self.myTextView setScrollEnabled:NO];
     [self.myTextView setText:@""];
-    [self.myTextView setText:content];
+    
+    if ([language isEqualToString:@"zh-Hans"]) {
+        UInt32 big5 = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        NSString *big5EncStr = [content stringByReplacingPercentEscapesUsingEncoding:big5];
+        Big5ToGB *big5togb = [[Big5ToGB alloc] init];
+        NSString *gbEncStr = [big5togb big5ToGB:big5EncStr];
+        [self.myTextView setText:gbEncStr];
+        [big5togb release];
+    }
+    else
+        [self.myTextView setText:content];
+    
+    
     [self.myTextView setScrollEnabled:YES];
     [self.myTextView setContentOffset:p animated:NO];
     
     [content release];
-    
     [db close];
 } 
 
