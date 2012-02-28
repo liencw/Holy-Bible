@@ -218,7 +218,6 @@
     [self.myTextView setText:@""];
     [self.myTextView setText:content];
     [self.myTextView setScrollEnabled:YES];
-    
     [self.myTextView setContentOffset:p animated:NO];
     
     [content release];
