@@ -195,8 +195,6 @@
                                      [dataDictionary valueForKey:kDetailKey]];
     }
     
-    
-	
 	return cell;
 }
 
