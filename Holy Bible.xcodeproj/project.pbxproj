@@ -12,9 +12,8 @@
 		BE206D0714D2F6B500832924 /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE206D0514D2F6B500832924 /* ChapterViewController.m */; };
 		BE206D1214D2F8B200832924 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE206D1014D2F8B200832924 /* ContentViewController.m */; };
 		BE206D1314D2F8B200832924 /* Content.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE206D1114D2F8B200832924 /* Content.xib */; };
-		BE476D6514FD30C9002DD29D /* Holy Bible-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEE2D04614FD2B2300EAB51C /* Holy Bible-Info.plist */; };
+		BE46EC4314FFC0DB0074F362 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE46EC4514FFC0DB0074F362 /* InfoPlist.strings */; };
 		BE476D6814FD3294002DD29D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE476D6A14FD3294002DD29D /* Localizable.strings */; };
-		BE476D6E14FD34B9002DD29D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE476D6D14FD34B9002DD29D /* Localizable.strings */; };
 		BE60745014DC4C60001B5C76 /* Chapter.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE60744E14DC4C60001B5C76 /* Chapter.xib */; };
 		BE76D0D514FCE002004D6863 /* Big5ToGB.tbl in Resources */ = {isa = PBXBuildFile; fileRef = BE76D0D414FCE002004D6863 /* Big5ToGB.tbl */; };
 		BE76D0D814FCF80B004D6863 /* BIG5toGB.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE76D0D714FCF80B004D6863 /* BIG5toGB.mm */; };
@@ -40,10 +39,12 @@
 		BE206D0514D2F6B500832924 /* ChapterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewController.m; sourceTree = "<group>"; };
 		BE206D1014D2F8B200832924 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		BE206D1114D2F8B200832924 /* Content.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Content.xib; path = "Holy Bible/Content.xib"; sourceTree = "<group>"; };
+		BE46EC3E14FFBCDA0074F362 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		BE46EC4014FFBD880074F362 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		BE46EC4414FFC0DB0074F362 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BE46EC4614FFC0F60074F362 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		BE46EC4714FFC1070074F362 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		BE476D6914FD3294002DD29D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		BE476D6B14FD3326002DD29D /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		BE476D6C14FD332F002DD29D /* zh-Hant-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-TW"; path = "zh-Hant-TW.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		BE476D6D14FD34B9002DD29D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BE60744E14DC4C60001B5C76 /* Chapter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Chapter.xib; path = "Holy Bible/Chapter.xib"; sourceTree = "<group>"; };
 		BE76D0CE14FCC9B4004D6863 /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = usr/lib/libiconv.2.dylib; sourceTree = SDKROOT; };
 		BE76D0D414FCE002004D6863 /* Big5ToGB.tbl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Big5ToGB.tbl; path = "Holy Bible/Big5ToGB.tbl"; sourceTree = "<group>"; };
@@ -134,7 +135,6 @@
 		BE804C8314D2754D00B85E9D /* Holy Bible */ = {
 			isa = PBXGroup;
 			children = (
-				BE476D6D14FD34B9002DD29D /* Localizable.strings */,
 				BE74979714DC2AEC00A385C1 /* Resources */,
 				BEA14E9314F54308009ED2AA /* iPad */,
 				BE804C8C14D2754D00B85E9D /* MainAppDelegate.h */,
@@ -146,6 +146,7 @@
 				BE206D0514D2F6B500832924 /* ChapterViewController.m */,
 				BE78820A14FD1EA0008E5B56 /* ContentViewController.h */,
 				BE206D1014D2F8B200832924 /* ContentViewController.m */,
+				BE46EC4514FFC0DB0074F362 /* InfoPlist.strings */,
 			);
 			path = "Holy Bible";
 			sourceTree = "<group>";
@@ -217,6 +218,7 @@
 				"zh-Hans",
 				"zh-Hant-TW",
 				"zh-Hans-CN",
+				zh,
 			);
 			mainGroup = BE804C6E14D2754D00B85E9D;
 			productRefGroup = BE804C7A14D2754D00B85E9D /* Products */;
@@ -233,17 +235,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0F0EF614FCC51300BA93AF /* biblex114.png in Resources */,
+				BE0F0EF314FCC48700BA93AF /* biblex57.png in Resources */,
 				BE804C9914D2762200B85E9D /* Window.xib in Resources */,
 				BE804C9B14D2786600B85E9D /* Default.png in Resources */,
 				BE206D1314D2F8B200832924 /* Content.xib in Resources */,
 				BE60745014DC4C60001B5C76 /* Chapter.xib in Resources */,
 				BE96C63C14E0F8A60067E89F /* cunp.sqlite3 in Resources */,
-				BE0F0EF314FCC48700BA93AF /* biblex57.png in Resources */,
-				BE0F0EF614FCC51300BA93AF /* biblex114.png in Resources */,
 				BE76D0D514FCE002004D6863 /* Big5ToGB.tbl in Resources */,
-				BE476D6514FD30C9002DD29D /* Holy Bible-Info.plist in Resources */,
 				BE476D6814FD3294002DD29D /* Localizable.strings in Resources */,
-				BE476D6E14FD34B9002DD29D /* Localizable.strings in Resources */,
+				BE46EC4314FFC0DB0074F362 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,12 +270,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BE46EC4514FFC0DB0074F362 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE46EC4414FFC0DB0074F362 /* en */,
+				BE46EC4614FFC0F60074F362 /* zh-Hant */,
+				BE46EC4714FFC1070074F362 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		BE476D6A14FD3294002DD29D /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BE476D6914FD3294002DD29D /* en */,
-				BE476D6B14FD3326002DD29D /* zh-Hans-CN */,
-				BE476D6C14FD332F002DD29D /* zh-Hant-TW */,
+				BE46EC3E14FFBCDA0074F362 /* zh-Hans */,
+				BE46EC4014FFBD880074F362 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
