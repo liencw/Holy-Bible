@@ -195,6 +195,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "233"
+<<<<<<< HEAD
          endingLineNumber = "233">
       </FileBreakpoint>
       <FileBreakpoint
@@ -265,6 +266,10 @@
          endingLineNumber = "233"
          landmarkName = "-oneFingerTwoTaps"
 >>>>>>> simplified
+=======
+         endingLineNumber = "233"
+         landmarkName = "-oneFingerTwoTaps"
+>>>>>>> simplified
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -274,6 +279,7 @@
          isPathRelative = "1"
          filePath = "Holy Bible/ContentViewController.m"
 <<<<<<< HEAD
+<<<<<<< HEAD
          timestampString = "352394729.835228"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
@@ -281,6 +287,8 @@
          endingLineNumber = "112"
          landmarkName = "-viewDidLoad"
 =======
+=======
+>>>>>>> simplified
          timestampString = "352393863.086237"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
@@ -288,6 +296,74 @@
          endingLineNumber = "257"
          landmarkName = "-oneFingerTwoTaps"
 >>>>>>> simplified
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Holy Bible/Big5toGB.mm"
+         timestampString = "352390398.054998"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "199"
+         endingLineNumber = "199">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Holy Bible/ContentViewController.m"
+         timestampString = "352130689.812104"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Holy Bible/MainViewController.m"
+         timestampString = "352135263.64518"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "37"
+         endingLineNumber = "37"
+         landmarkName = "-initWithNibName:bundle:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Holy Bible/BIG5toGB.mm"
+         timestampString = "352390344.510186"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "72"
+         endingLineNumber = "72"
+         landmarkName = "-big5ToGB:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Holy Bible/ContentViewController.m"
+         timestampString = "352394729.835228"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "112"
+         endingLineNumber = "112"
+         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
