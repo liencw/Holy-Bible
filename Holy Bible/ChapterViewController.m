@@ -55,7 +55,7 @@
     self.title = booksName;
     self.menuList = [NSMutableArray array];
     
-    if ([booksName isEqualToString:@"詩篇"])
+    if ([booksName isEqualToString:@"詩篇"] || [booksName isEqualToString:@"诗篇"])
         for (int i=1; i<=versesAmount; i++) {
             [self.menuList addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:
                                       [NSString stringWithFormat: @"第 %d 篇",i], kTitleKey,

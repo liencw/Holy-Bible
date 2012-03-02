@@ -14,7 +14,6 @@
 	NSMutableArray *menuList;
     NSMutableArray *oldList;
     NSMutableArray *newList;
-	
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *myTableView;

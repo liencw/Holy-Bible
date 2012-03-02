@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "FMDatabase.h"
 #import "ChapterViewController.h"
+#import "BIG5toGB.h"
 
 @implementation MainViewController
 
@@ -35,7 +36,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
     }
     return self;
 }
@@ -63,8 +63,8 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
-    //self.title = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
-    self.title = @"聖經和合本";
+    self.title = NSLocalizedString(@"CFBundleDisplayName",nil);
+    //self.title = @"聖經和合本";
     self.menuList = [NSMutableArray array];
     self.oList = [NSMutableArray array];
     self.nList = [NSMutableArray array];
@@ -76,7 +76,12 @@
         return;
     }
     
-    FMResultSet *rs = [db executeQuery:@"select * from books"];
+    FMResultSet *rs;
+    if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"zh-Hans"])
+        rs = [db executeQuery:@"select * from books_simpl"];
+    else 
+        rs = [db executeQuery:@"select * from books"];
+    
     while ([rs next]) {
         if ([[rs stringForColumn:@"number"] intValue] < 40)
             [self.oList addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:
@@ -138,9 +143,9 @@
 {
     
     if(section == 0)
-        return @"舊約";
+        return NSLocalizedString(@"OLDTestment",nil);
     else
-        return @"新約";
+        return NSLocalizedString(@"NEWTestment",nil);
 }
 
 
@@ -173,9 +178,9 @@
     NSDictionary *dataDictionary = [sublist objectAtIndex:indexPath.row];
     cell.textLabel.text = [dataDictionary valueForKey:kTitleKey];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", 
-                                 [dataDictionary valueForKey:kSimpifiedKey], 
-                                 [dataDictionary valueForKey:kDetailKey]];
-	
+                                     [dataDictionary valueForKey:kSimpifiedKey], 
+                                     [dataDictionary valueForKey:kDetailKey]];
+    
 	return cell;
 }
 
