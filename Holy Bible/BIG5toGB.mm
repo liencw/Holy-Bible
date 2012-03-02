@@ -36,7 +36,7 @@ NSStringEncoding big5Encoding_HK=0x80000A06;
     int i,j;
     int i0,i1;
     unsigned char *byteGB=new unsigned char[len];
-    memset(byteGB, 0 , sizeof(byteGB));
+    //memset(byteGB, 0 , sizeof(byteGB));
     
     j=0;
     i=start;
@@ -69,7 +69,7 @@ NSStringEncoding big5Encoding_HK=0x80000A06;
     @try{
         NSInteger len=[big5 lengthOfBytesUsingEncoding:big5Encoding_HK];
         unsigned char *buffer=new unsigned char[len];
-        memset(buffer, 0, sizeof(buffer));
+        //memset(buffer, 0, sizeof(buffer));
         NSRange rg=NSMakeRange(0, len);
         
         [big5 getBytes:(void *)buffer maxLength:(NSUInteger)len usedLength:(NSUInteger *)NULL encoding:(NSStringEncoding)big5Encoding_HK options:(NSStringEncodingConversionOptions)INT_MAX range:(NSRange)rg remainingRange:(NSRangePointer)NULL];

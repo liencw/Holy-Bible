@@ -76,7 +76,12 @@
         return;
     }
     
-    FMResultSet *rs = [db executeQuery:@"select * from books"];
+    FMResultSet *rs;
+    if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"zh-Hans"])
+        rs = [db executeQuery:@"select * from books_simpl"];
+    else 
+        rs = [db executeQuery:@"select * from books"];
+    
     while ([rs next]) {
         if ([[rs stringForColumn:@"number"] intValue] < 40)
             [self.oList addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:
@@ -171,29 +176,10 @@
 	// get the view controller's info dictionary based on the indexPath's row
     NSMutableArray *sublist = [menuList objectAtIndex:indexPath.section];
     NSDictionary *dataDictionary = [sublist objectAtIndex:indexPath.row];
-    
-    if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"zh-Hans"]) {
-        UInt32 big5 = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-        NSString *big5EncStr = [[dataDictionary valueForKey:kTitleKey] stringByReplacingPercentEscapesUsingEncoding:big5];
-        Big5ToGB *big5togb = [[Big5ToGB alloc] init];
-        NSString *gbEncStr = [big5togb big5ToGB:big5EncStr];       
-        cell.textLabel.text = gbEncStr;
-        
-        big5EncStr = [[NSString stringWithFormat:@"%@ %@", 
-                       [dataDictionary valueForKey:kSimpifiedKey], 
-                       [dataDictionary valueForKey:kDetailKey]] stringByReplacingPercentEscapesUsingEncoding:big5];
-        gbEncStr = [big5togb big5ToGB:big5EncStr];
-        
-        cell.detailTextLabel.text = gbEncStr;
-        
-        [big5togb release];
-    }
-    else {
-        cell.textLabel.text = [dataDictionary valueForKey:kTitleKey];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", 
+    cell.textLabel.text = [dataDictionary valueForKey:kTitleKey];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", 
                                      [dataDictionary valueForKey:kSimpifiedKey], 
                                      [dataDictionary valueForKey:kDetailKey]];
-    }
     
 	return cell;
 }

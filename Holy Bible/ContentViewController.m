@@ -66,7 +66,12 @@
         return;
     }
     
-    NSString *rs = [db stringForQuery:@"select osis from books where human = ?", booksName];
+    NSString *rs;
+    if ([language isEqualToString:@"zh-Hans"]) 
+        rs = [db stringForQuery:@"select osis from books_simpl where human = ?", booksName];
+    else
+        rs = [db stringForQuery:@"select osis from books where human = ?", booksName];
+    
     NSString *search_text = [[NSString alloc] initWithFormat:@"%@.%%", chapter];
     
     FMResultSet *rs2 = [db executeQuery:@"select * from verses where book=? and verse like ?", rs, search_text];
@@ -207,7 +212,12 @@
         return;
     }
     
-    NSString *rs = [db stringForQuery:@"select osis from books where human = ?", booksName];
+    NSString *rs;
+    if ([language isEqualToString:@"zh-Hans"]) 
+        rs = [db stringForQuery:@"select osis from books_simpl where human = ?", booksName];
+    else
+        rs = [db stringForQuery:@"select osis from books where human = ?", booksName];
+    
     NSString *search_text = [[NSString alloc] initWithFormat:@"%@.%%", chapter];
     
     FMResultSet *rs2 = [db executeQuery:@"select * from verses where book=? and verse like ?", rs, search_text];
