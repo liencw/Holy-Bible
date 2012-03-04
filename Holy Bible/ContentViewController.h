@@ -19,5 +19,6 @@
 @property (nonatomic, retain) IBOutlet UITextView *myTextView;
 
 - (id)init:(NSString *)title andChapter:(NSString *)num;
+- (void)test;
 
 @end

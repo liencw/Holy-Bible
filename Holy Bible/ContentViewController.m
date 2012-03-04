@@ -49,6 +49,7 @@
 
 - (void)viewDidLoad
 {
+
     NSString *dbpath = [[NSBundle mainBundle] pathForResource:@"cunp.sqlite3" ofType:nil]; 
     
     NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];    
@@ -79,14 +80,14 @@
     
     NSMutableString *content = [[NSMutableString alloc] initWithString:@""];
     NSString *trimText;
-    NSInteger versesNum = 1;
+    NSInteger versesNum = -1;
     while ([rs2 next]) {
         
         trimText = [[rs2 stringForColumn:@"unformatted"] stringByReplacingOccurrencesOfString:@" +" withString:@""
                                                             options:NSRegularExpressionSearch
                                                               range:NSMakeRange(0, [rs2 stringForColumn:@"unformatted"].length)];
         
-        if ([trimText rangeOfString:@"\n"].location == 0  && versesNum != 1) {
+        if ([trimText rangeOfString:@"\n"].location == 0  && versesNum != -1) {
             [content appendString:@"\n\n"];
         }
         
@@ -98,11 +99,19 @@
                                                           options:NSRegularExpressionSearch 
                                                             range:NSMakeRange(0, trimText.length)];
         
-        if (hasVerse)
+        if (hasVerse) {
+            NSArray *num = [[rs2 stringForColumn:@"verse"] componentsSeparatedByString:@"."];
+            if ([[num objectAtIndex:1] length] == 2) {
+                versesNum = [[num objectAtIndex:1] intValue];
+                versesNum = versesNum * 10;
+            }
+            else
+                versesNum = [[num objectAtIndex:1] intValue];
             [content appendString:[NSString stringWithFormat:@"%d ", versesNum]];
+        }
         
         [content appendString:trimText];
-        versesNum++;
+        versesNum = 1;
     }
    
     if ([language isEqualToString:@"zh-Hans"]) {
@@ -225,12 +234,12 @@
     
     NSMutableString *content = [[NSMutableString alloc] initWithString:@""];
     NSString *trimText;
-    NSInteger versesNum = 1;
+    NSInteger versesNum = -1;
     while ([rs2 next]) {
         trimText = [[rs2 stringForColumn:@"unformatted"] stringByReplacingOccurrencesOfString:@" +" withString:@""
                                                                                       options:NSRegularExpressionSearch
                                                                                         range:NSMakeRange(0, [rs2 stringForColumn:@"unformatted"].length)];
-        if ([trimText rangeOfString:@"\n"].location == 0 && versesNum != 1) {
+        if ([trimText rangeOfString:@"\n"].location == 0 && versesNum != -1) {
             [content appendString:@"\n\n"];
         }
         
@@ -242,11 +251,19 @@
                                                               options:NSRegularExpressionSearch 
                                                                 range:NSMakeRange(0, trimText.length)];
         
-        if (hasVerse)
+        if (hasVerse) {
+            NSArray *num = [[rs2 stringForColumn:@"verse"] componentsSeparatedByString:@"."];
+            if ([[num objectAtIndex:1] length] == 2) {
+                versesNum = [[num objectAtIndex:1] intValue];
+                versesNum = versesNum * 10;
+            }
+            else
+                versesNum = [[num objectAtIndex:1] intValue];
             [content appendString:[NSString stringWithFormat:@"%d ", versesNum]];
-        [content appendString:trimText];
+        }
         
-        versesNum++;
+        [content appendString:trimText];
+        versesNum = 1;
     }
     
     [self.myTextView setScrollEnabled:NO];
@@ -270,6 +287,32 @@
     [content release];
     [db close];
 } 
+
+// 經文編碼轉換測試
+
+- (void)test {
+    NSString *dbpath = [[NSBundle mainBundle] pathForResource:@"cunp.sqlite3" ofType:nil]; 
+    FMDatabase* db = [FMDatabase databaseWithPath:dbpath];
+    if (![db open]) {
+        NSLog(@"Ooops");
+        return;
+    }
+    FMResultSet *rs = [db executeQuery:@"select * from books"];
+    while ([rs next]) {
+        FMResultSet *rs2 = [db executeQuery:@"select * from verses where book=?", [rs stringForColumn:@"osis"]];
+        while ([rs2 next]) {
+            NSStringEncoding big5Encoding_HK=0x80000A06;
+            NSInteger len=[[rs2 stringForColumn:@"unformatted"] lengthOfBytesUsingEncoding:big5Encoding_HK]; 
+            if (len == 0) {
+                // I got you!
+                //NSLog([rs2 stringForColumn:@"unformatted"]);
+                NSLog(@"Got problem: %@:, %@", [rs2 stringForColumn:@"book"], [rs2 stringForColumn:@"verse"]);
+            }
+        }
+        
+    }
+    [db close];
+}
 
 
 @end
