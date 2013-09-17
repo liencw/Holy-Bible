@@ -14,11 +14,14 @@
     NSString *chapter;
     NSString *booksName;
     bool hasVerse;
+    CGFloat oldVelocity;
+    
 }
 
 @property (nonatomic, retain) IBOutlet UITextView *myTextView;
 
 - (id)init:(NSString *)title andChapter:(NSString *)num;
 - (void)test;
+- (void)pinchGesture:(UIPinchGestureRecognizer *)gestureRecognizer;
 
 @end

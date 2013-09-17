@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		BE0F0EF314FCC48700BA93AF /* biblex57.png in Resources */ = {isa = PBXBuildFile; fileRef = BE0F0EF214FCC48700BA93AF /* biblex57.png */; };
 		BE0F0EF614FCC51300BA93AF /* biblex114.png in Resources */ = {isa = PBXBuildFile; fileRef = BE0F0EF514FCC51300BA93AF /* biblex114.png */; };
+		BE20408517E838AC000B6797 /* Bible58.png in Resources */ = {isa = PBXBuildFile; fileRef = BE20408217E838AC000B6797 /* Bible58.png */; };
+		BE20408617E838AC000B6797 /* Bible80.png in Resources */ = {isa = PBXBuildFile; fileRef = BE20408317E838AC000B6797 /* Bible80.png */; };
+		BE20408717E838AC000B6797 /* Bible120.png in Resources */ = {isa = PBXBuildFile; fileRef = BE20408417E838AC000B6797 /* Bible120.png */; };
+		BE20408917E83AD7000B6797 /* default-640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = BE20408817E83AD7000B6797 /* default-640x960.png */; };
+		BE20408D17E83BEC000B6797 /* default-640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = BE20408C17E83BEC000B6797 /* default-640x1136.png */; };
+		BE20408F17E84191000B6797 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE20408E17E84191000B6797 /* Default-568h@2x.png */; };
+		BE20409117E841B7000B6797 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE20409017E841B7000B6797 /* Images.xcassets */; };
 		BE206D0714D2F6B500832924 /* ChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE206D0514D2F6B500832924 /* ChapterViewController.m */; };
 		BE206D1214D2F8B200832924 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE206D1014D2F8B200832924 /* ContentViewController.m */; };
 		BE206D1314D2F8B200832924 /* Content.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE206D1114D2F8B200832924 /* Content.xib */; };
@@ -35,6 +42,13 @@
 /* Begin PBXFileReference section */
 		BE0F0EF214FCC48700BA93AF /* biblex57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = biblex57.png; sourceTree = "<group>"; };
 		BE0F0EF514FCC51300BA93AF /* biblex114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = biblex114.png; sourceTree = "<group>"; };
+		BE20408217E838AC000B6797 /* Bible58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bible58.png; sourceTree = "<group>"; };
+		BE20408317E838AC000B6797 /* Bible80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bible80.png; sourceTree = "<group>"; };
+		BE20408417E838AC000B6797 /* Bible120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bible120.png; sourceTree = "<group>"; };
+		BE20408817E83AD7000B6797 /* default-640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-640x960.png"; sourceTree = "<group>"; };
+		BE20408C17E83BEC000B6797 /* default-640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-640x1136.png"; sourceTree = "<group>"; };
+		BE20408E17E84191000B6797 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		BE20409017E841B7000B6797 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE206D0414D2F6B500832924 /* ChapterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapterViewController.h; sourceTree = "<group>"; };
 		BE206D0514D2F6B500832924 /* ChapterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapterViewController.m; sourceTree = "<group>"; };
 		BE206D1014D2F8B200832924 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
@@ -105,6 +119,12 @@
 		BE804C6E14D2754D00B85E9D = {
 			isa = PBXGroup;
 			children = (
+				BE20408E17E84191000B6797 /* Default-568h@2x.png */,
+				BE20408C17E83BEC000B6797 /* default-640x1136.png */,
+				BE20408817E83AD7000B6797 /* default-640x960.png */,
+				BE20408217E838AC000B6797 /* Bible58.png */,
+				BE20408317E838AC000B6797 /* Bible80.png */,
+				BE20408417E838AC000B6797 /* Bible120.png */,
 				BE0F0EF514FCC51300BA93AF /* biblex114.png */,
 				BE0F0EF214FCC48700BA93AF /* biblex57.png */,
 				BE804C9A14D2786600B85E9D /* Default.png */,
@@ -147,6 +167,7 @@
 				BE78820A14FD1EA0008E5B56 /* ContentViewController.h */,
 				BE206D1014D2F8B200832924 /* ContentViewController.m */,
 				BE46EC4514FFC0DB0074F362 /* InfoPlist.strings */,
+				BE20409017E841B7000B6797 /* Images.xcassets */,
 			);
 			path = "Holy Bible";
 			sourceTree = "<group>";
@@ -205,8 +226,13 @@
 		BE804C7014D2754D00B85E9D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = fishgold;
+				TargetAttributes = {
+					BE804C7814D2754D00B85E9D = {
+						DevelopmentTeam = X99TX966C2;
+					};
+				};
 			};
 			buildConfigurationList = BE804C7314D2754D00B85E9D /* Build configuration list for PBXProject "Holy Bible" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -240,9 +266,16 @@
 				BE804C9914D2762200B85E9D /* Window.xib in Resources */,
 				BE804C9B14D2786600B85E9D /* Default.png in Resources */,
 				BE206D1314D2F8B200832924 /* Content.xib in Resources */,
+				BE20408517E838AC000B6797 /* Bible58.png in Resources */,
+				BE20408617E838AC000B6797 /* Bible80.png in Resources */,
 				BE60745014DC4C60001B5C76 /* Chapter.xib in Resources */,
+				BE20408717E838AC000B6797 /* Bible120.png in Resources */,
 				BE96C63C14E0F8A60067E89F /* cunp.sqlite3 in Resources */,
+				BE20408917E83AD7000B6797 /* default-640x960.png in Resources */,
+				BE20409117E841B7000B6797 /* Images.xcassets in Resources */,
 				BE76D0D514FCE002004D6863 /* Big5ToGB.tbl in Resources */,
+				BE20408D17E83BEC000B6797 /* default-640x1136.png in Resources */,
+				BE20408F17E84191000B6797 /* Default-568h@2x.png in Resources */,
 				BE476D6814FD3294002DD29D /* Localizable.strings in Resources */,
 				BE46EC4314FFC0DB0074F362 /* InfoPlist.strings in Resources */,
 			);
@@ -297,8 +330,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Will Lien (4Z58K964TS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos7.0]" = "iPhone Developer: Will Lien (4Z58K964TS)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -309,10 +348,16 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "7F025AA2-654C-4783-8730-42A7CE25C208";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -322,17 +367,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos5.0]" = "iPhone Distribution: JUN WEI Lien";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: JUN WEI Lien (X99TX966C2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos7.0]" = "iPhone Distribution: JUN WEI Lien";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=iphoneos5.0]" = "685DE46C-CA00-41F8-96F6-86BA19274380";
+				PROVISIONING_PROFILE = "7F025AA2-654C-4783-8730-42A7CE25C208";
+				"PROVISIONING_PROFILE[sdk=*]" = "685DE46C-CA00-41F8-96F6-86BA19274380";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -342,20 +398,19 @@
 		BE804C9214D2754D00B85E9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Will Lien (4Z58K964TS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Will Lien (4Z58K964TS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Holy Bible/Holy Bible-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Holy Bible/Holy Bible-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "BAA31000-9703-4A32-A50B-2AB9D3592427";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BAA31000-9703-4A32-A50B-2AB9D3592427";
+				PROVISIONING_PROFILE = "B369344E-6040-4CAD-89FA-3E2648DFF21B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B369344E-6040-4CAD-89FA-3E2648DFF21B";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -364,22 +419,19 @@
 		BE804C9314D2754D00B85E9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv6,
-					armv7,
-				);
-				CODE_SIGN_IDENTITY = "iPhone Distribution: JUN WEI Lien";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: JUN WEI Lien";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos5.0]" = "iPhone Distribution";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: JUN WEI Lien (X99TX966C2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Holy Bible/Holy Bible-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Holy Bible/Holy Bible-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "685DE46C-CA00-41F8-96F6-86BA19274380";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "685DE46C-CA00-41F8-96F6-86BA19274380";
-				"PROVISIONING_PROFILE[sdk=iphoneos5.0]" = "685DE46C-CA00-41F8-96F6-86BA19274380";
+				PROVISIONING_PROFILE = "7F025AA2-654C-4783-8730-42A7CE25C208";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

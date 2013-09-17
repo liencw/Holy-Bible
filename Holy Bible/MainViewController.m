@@ -83,6 +83,7 @@
         rs = [db executeQuery:@"select * from books"];
     
     while ([rs next]) {
+        
         if ([[rs stringForColumn:@"number"] intValue] < 40)
             [self.oList addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:
                                 [rs stringForColumn:@"human"], kTitleKey,
@@ -95,7 +96,9 @@
                                 [rs stringForColumn:@"chapters"], kDetailKey,
                                 [rs stringForColumn:@"simpl"], kSimpifiedKey,
                                 nil]];
+        
     }
+    
     [self.menuList addObject:oList];
     [self.menuList addObject:nList];
     

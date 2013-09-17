@@ -34,6 +34,7 @@
         else
             hasVerse = true;
     }
+    oldVelocity = -1000;
     return self;
 }
 
@@ -73,15 +74,16 @@
     else
         rs = [db stringForQuery:@"select osis from books where human = ?", booksName];
     
-    NSString *search_text = [[NSString alloc] initWithFormat:@"%@.%%", chapter];
+    NSString *search_text = [[NSString alloc] initWithFormat:@"select * from verses where book='%@' and verse like '%@.%%'", rs, chapter];
     
-    FMResultSet *rs2 = [db executeQuery:@"select * from verses where book=? and verse like ?", rs, search_text];
+    FMResultSet *rs2 = [db executeQuery:search_text];
     [search_text release];
     
     NSMutableString *content = [[NSMutableString alloc] initWithString:@""];
     NSString *trimText;
     NSInteger versesNum = -1;
     while ([rs2 next]) {
+
         
         trimText = [[rs2 stringForColumn:@"unformatted"] stringByReplacingOccurrencesOfString:@" +" withString:@""
                                                             options:NSRegularExpressionSearch
@@ -125,9 +127,21 @@
     else
         [myTextView setText:content];
     
+    // Adjust font size
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    UIFont *font = self.myTextView.font;
+    CGFloat pointSize = [prefs floatForKey:@"myFontSize"];
+    NSString *fontName = font.fontName;
+    if (pointSize != 0)
+        self.myTextView.font = [UIFont fontWithName:fontName size:pointSize];
+    
     [content release];
     [db close];
     
+    // Create a pinch gesture recognizer instance.
+    UIPinchGestureRecognizer *pinchGestureRecognizer = [[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)] autorelease];
+    // And add it to your text view.
+    [myTextView addGestureRecognizer:pinchGestureRecognizer];
     
     UISwipeGestureRecognizer  *recognizerLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleLeftSwipeFrom:)];
     [recognizerLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
@@ -156,6 +170,37 @@
     
 }
 
+- (void)pinchGesture:(UIPinchGestureRecognizer *)gestureRecognizer
+{
+	//NSLog(@"*** Pinch: Scale: %f Velocity: %f", gestureRecognizer.scale, gestureRecognizer.velocity);
+    
+	UIFont *font = self.myTextView.font;
+	CGFloat pointSize = font.pointSize;
+	NSString *fontName = font.fontName;
+    
+    if (oldVelocity == -1000) {
+        oldVelocity = gestureRecognizer.velocity;
+        pointSize = ((gestureRecognizer.velocity > 0) ? 1 : -1) * 1 + pointSize;
+    }
+    else {
+        if (gestureRecognizer.velocity != oldVelocity)
+            pointSize = ((gestureRecognizer.velocity > 0) ? 1 : -1) * 1 + pointSize;
+        oldVelocity = gestureRecognizer.velocity;
+    }
+	
+	
+	if (pointSize < 13) pointSize = 13;
+	if (pointSize > 42) pointSize = 42;
+	
+	self.myTextView.font = [UIFont fontWithName:fontName size:pointSize];
+	
+	// Save the new font size in the user defaults.
+    // (UserDefaults is my own wrapper around NSUserDefaults.)
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setFloat:pointSize forKey:@"myFontSize"];
+    [prefs synchronize];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -176,9 +221,8 @@
 {
     //NSLog(@"handleLeftSwipeFrom received: %d", recognizer.direction);
     
-    NSDictionary* dict;
-    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft)
-        dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:UISwipeGestureRecognizerDirectionLeft] forKey:@"direction"];
+    NSDictionary* dict = nil;
+    dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:UISwipeGestureRecognizerDirectionLeft] forKey:@"direction"];
 
     if (dict) 
         [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"%@%@", @"swipeNotify", booksName] object:self userInfo:dict];
@@ -189,7 +233,7 @@
 {
     //NSLog(@"handleRightSwipeFrom received: %d", recognizer.direction);
     
-    NSDictionary* dict;
+    NSDictionary* dict = nil;
     if (recognizer.direction == UISwipeGestureRecognizerDirectionRight)
         dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:UISwipeGestureRecognizerDirectionRight] forKey:@"direction"];
     
@@ -227,10 +271,11 @@
     else
         rs = [db stringForQuery:@"select osis from books where human = ?", booksName];
     
-    NSString *search_text = [[NSString alloc] initWithFormat:@"%@.%%", chapter];
+    NSString *search_text = [[NSString alloc] initWithFormat:@"select * from verses where book='%@' and verse like '%@.%%'", rs, chapter];
     
-    FMResultSet *rs2 = [db executeQuery:@"select * from verses where book=? and verse like ?", rs, search_text];
+    FMResultSet *rs2 = [db executeQuery:search_text];
     [search_text release];
+
     
     NSMutableString *content = [[NSMutableString alloc] initWithString:@""];
     NSString *trimText;
