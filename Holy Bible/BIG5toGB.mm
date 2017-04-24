@@ -5,7 +5,7 @@
 //  Created by Will on 12/2/28.
 //  Copyright (c) 2012年 fishgold. All rights reserved.
 //
-#import "Big5ToGB.h"
+#import "BIG5toGB.h"
 
 NSStringEncoding gbEncoding=0x80000632;
 NSStringEncoding big5Encoding_HK=0x80000A06;
@@ -74,7 +74,7 @@ NSStringEncoding big5Encoding_HK=0x80000A06;
         
         [big5 getBytes:(void *)buffer maxLength:(NSUInteger)len usedLength:(NSUInteger *)NULL encoding:(NSStringEncoding)big5Encoding_HK options:(NSStringEncodingConversionOptions)INT_MAX range:(NSRange)rg remainingRange:(NSRangePointer)NULL];
         unsigned char *byteGB=[self big5ToGB:(unsigned char *)buffer start:0 length:len];
-        delete buffer;
+        delete[] buffer;
         gbStr= [[NSString alloc] initWithBytes:byteGB length:len encoding:gbEncoding];
         delete byteGB;
     }

@@ -28,7 +28,8 @@
         [prefs synchronize];
     }
 	// add the navigation controller's view to the window
-	[window addSubview:navigationController.view];
+	//[window addSubview:navigationController.view];
+    [window setRootViewController:navigationController];
 	[window makeKeyAndVisible];
 }
 

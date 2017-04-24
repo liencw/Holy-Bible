@@ -162,14 +162,14 @@
     if ([direction integerValue] == UISwipeGestureRecognizerDirectionRight) {
         if(--currentIndex <0) {
             currentIndex = 0;
-            NSLog(@"currentIndex limited: %d", currentIndex);
+            NSLog(@"currentIndex limited: %ld", (long)currentIndex);
             return;
         }
     }
     else if ([direction integerValue] == UISwipeGestureRecognizerDirectionLeft) {
         if(++currentIndex >= versesAmount) {
             currentIndex = versesAmount-1;
-            NSLog(@"currentIndex limited: %d", currentIndex);
+            NSLog(@"currentIndex limited: %ld", (long)currentIndex);
             return;
         }
     }

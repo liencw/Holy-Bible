@@ -109,7 +109,7 @@
             }
             else
                 versesNum = [[num objectAtIndex:1] intValue];
-            [content appendString:[NSString stringWithFormat:@"%d ", versesNum]];
+            [content appendString:[NSString stringWithFormat:@"%ld ", (long)versesNum]];
         }
         
         [content appendString:trimText];
@@ -304,7 +304,7 @@
             }
             else
                 versesNum = [[num objectAtIndex:1] intValue];
-            [content appendString:[NSString stringWithFormat:@"%d ", versesNum]];
+            [content appendString:[NSString stringWithFormat:@"%ld ", (long)versesNum]];
         }
         
         [content appendString:trimText];
